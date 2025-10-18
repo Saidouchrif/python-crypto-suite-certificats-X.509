@@ -18,6 +18,51 @@ Suite cryptographique complète en Python démontrant les principaux mécanismes
 
 ## 🏗️ Architecture du Projet
 
+### 📊 Diagramme d'Architecture Générale
+
+```mermaid
+graph TB
+    subgraph "🔐 Python Crypto Suite"
+        A["📋 Main Project"] --> B["🔐 AES Module"]
+        A --> C["🔑 RSA Module"]
+        A --> D["🧾 X.509 Module"]
+        A --> E["✍️ HMAC Module"]
+        
+        subgraph "🔐 AES - Chiffrement Symétrique"
+            B --> B1["📓 aes_crypto.ipynb"]
+            B --> B2["🔑 secret.key"]
+        end
+        
+        subgraph "🔑 RSA - Chiffrement Asymétrique"
+            C --> C1["📓 rsa_crypto.ipynb"]
+            C --> C2["🔐 private_key.pem"]
+            C --> C3["🔓 public_key.pem"]
+        end
+        
+        subgraph "🧾 X.509 - Certificats Numériques"
+            D --> D1["📓 cert_generator.ipynb"]
+            D --> D2["📜 certificate.pem"]
+            D --> D3["🔐 private_key.pem"]
+            D --> D4["🔓 public_key.pem"]
+        end
+        
+        subgraph "✍️ HMAC - Authentification"
+            E --> E1["📓 hmac_sign.ipynb"]
+            E --> E2["📓 hmac_verify.ipynb"]
+            E --> E3["📄 message.txt"]
+            E --> E4["✍️ message.hmac"]
+        end
+    end
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
+### 🗂️ Structure des Fichiers
+
 ```
 python-crypto-suite-certificats-X.509/
 ├── 📁 AES/                     # Chiffrement symétrique
